@@ -16,3 +16,7 @@ class TooManyDifferentProducts(BaseError):
 
 class InvalidRequest(BaseError):
     message = 'Неправильный запрос, попробуйте заново'
+
+
+class InvalidStorageName(BaseError):
+    message = 'Выбран несуществующий склад'

@@ -1,5 +1,8 @@
+from entity.courier import Courier
+from entity.request import Request
 from entity.shop import Shop
 from entity.store import Store
+from exceptions import InvalidRequest, BaseError, InvalidStorageName
 
 store = Store(items={
     "печенька": 25,
@@ -34,8 +37,8 @@ def main():
             break
 
         try:
-            request = Request(request=user_input)
-        except InvalidRequest as error:
+            request = Request(request=user_input, storages=storages)
+        except BaseError as error:
             print(error.message)
             continue
 
@@ -44,7 +47,11 @@ def main():
             storages=storages
         )
 
-        break
+        try:
+            courier.move()
+        except BaseError as error:
+            print(error.message)
+            courier.cancel()
 
 
 if __name__ == '__main__':
