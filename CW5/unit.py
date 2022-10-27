@@ -39,7 +39,7 @@ class BaseUnit(ABC):
     def equip_armor(self, armor: Armor):
         # TODO одеваем новую броню
         self.armor = armor
-        return f"{self.name} экипирован броней {self.weapon.name}"
+        return f"{self.name} экипирован броней {self.armor.name}"
 
     def _count_damage(self, target: BaseUnit) -> int:
         # TODO Эта функция должна содержать:

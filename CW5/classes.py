@@ -15,7 +15,7 @@ class UnitClass:
 
 
 WarriorClass = UnitClass(
-    name="Warrior",
+    name='Воин',
     max_health=60,
     max_stamina=30,
     attack=0.8,
@@ -25,7 +25,7 @@ WarriorClass = UnitClass(
 ) # TODO Инициализируем экземпляр класса UnitClass и присваиваем ему необходимые значения аттрибуотов
 
 ThiefClass = UnitClass(
-    name="Thief",
+    name='Вор',
     max_health=50,
     max_stamina=25,
     attack=1.5,
